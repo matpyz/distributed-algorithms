@@ -52,9 +52,7 @@ function regularProcess(myid, G, chnnl, prnt, chld)
         put!(chnnl[sender], (:yes, myid))
         prnt[myid] = sender
         for id ∈ G[myid]
-          if id ≠ sender
-            put!(chnnl[id], (:search, myid))
-          end
+          put!(chnnl[id], (:search, myid))
         end
       else
         put!(chnnl[sender], (:no, myid))
